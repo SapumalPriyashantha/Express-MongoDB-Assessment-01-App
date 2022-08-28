@@ -1,0 +1,18 @@
+{
+  "name": "exprees-mongodb-assesment-01-app",
+  "version": "1.0.0",
+  "description": "this is my first express and mongoDB app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
+  },
+  "author": "sapumal priyashantha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
+  }
+}
