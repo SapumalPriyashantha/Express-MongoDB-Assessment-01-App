@@ -28,12 +28,36 @@ router.post("/", async (req, res) => {
     }
 })
 
+router.post("/login",async (req,res)=>{
+    const surname=req.body.surname
+    const password=req.body.password
+    console.log(surname)
+    console.log(password)
+    try{
+        const response=await User.findOne({surname: surname,password:password})
+        if(response!==null){
+            res.send({
+                status:"200",
+                message: "Successfully Login",
+                data: response
+            })
+        }else {
+            res.send({
+                status:"200",
+                message: "Login Unsuccessfully",
+            })
+        }
+    }catch (err){
+        res.send("Error :" + err)
+    }
+})
+
 router.get("/", async (req, res) => {
     try {
         const response = await User.find()
         res.send({
             status:"200",
-            message: "Users get Successfully",
+            message: "Users Get All Successfully",
             data: response
         })
     } catch (err) {

@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const user = require("./routes/user")
-// const post = require("./routes/post1")
+const post = require("./routes/post")
 
 const app = express();
 const port = 4000;
@@ -21,7 +21,7 @@ con.on("open", () => {
 app.use(express.json())
 
 app.use('/users', user)
-// app.use('/post', post)
+app.use('/post', post)
 
 app.listen(port, () => {
     console.log(`app starting on ${port}`);
